@@ -1,0 +1,5 @@
+---
+# vars file for ansible
+ansible_additional_packags:
+  - python3-paramiko
+  - python3-libvirt

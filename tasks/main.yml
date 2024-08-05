@@ -1,0 +1,32 @@
+---
+
+- name: Install ansible via APT
+  ansible.builtin.apt:
+    name: ansible
+    state: present
+  when: ansible_install_method == "package_manager"
+
+- name: Install ansible-Lint via APT
+  ansible.builtin.apt:
+    name: ansible-lint
+    state: present
+  when: ansible_install_method == "package_manager" and ansible_install_lint
+
+- name: Install ansible via pip
+  ansible.builtin.pip:
+    name: ansible
+    state: present
+  when: ansible_install_method == "pip"
+
+- name: Install ansible-lint via pip
+  ansible.builtin.pip:
+    name: ansible-lint
+    state: present
+  when: ansible_install_method == "pip" and ansible_install_lint
+
+- name: Install ansible-creator
+  ansible.builtin.pip:
+    name: Ansible-creator
+    state: present
+    executable: /usr/bin/pip3
+  when: ansible_install_creator

@@ -1,0 +1,6 @@
+---
+# defaults file for ansible
+
+ansible_install_method: "package_manager"
+ansible_install_lint: true
+ansible_install_creator: true
